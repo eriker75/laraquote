@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "strict": true,
+    "jsx": "preserve",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "resources/js/*"
+      ],
+      "@components/*": [
+        "resources/js/Components/*"
+      ],
+      "@pages/*": [
+        "resources/js/Pages/*"
+      ],
+      "@layouts/*": [
+        "resources/js/Layouts/*"
+      ],
+      "@store/*": [
+        "resources/js/store/*"
+      ],
+      "@composables/*": [
+        "resources/js/Composables/*"
+      ],
+    }
+  },
+  "include": [
+    "resources/js/**/*",
+    "resources/js/vue-shim.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
