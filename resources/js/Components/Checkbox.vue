@@ -1,27 +1,35 @@
-<script setup>
-import { computed } from 'vue';
+<script lang="ts" setup>
+import { computed, defineProps, defineEmits, withDefaults } from 'vue';
 
-const emit = defineEmits(['update:checked']);
+interface Emits {
+    (event: 'update:checked', value: Array<any> | boolean): void
+}
 
-const props = defineProps({
-    checked: {
-        type: [Array, Boolean],
-        default: false,
-    },
-    value: {
-        default: null,
-    },
+// Define the types for the emitted events
+const emit = defineEmits<Emits>();
+
+// Define the interface for the props
+interface Props {
+    checked?: Array<any> | boolean;
+    value?: any;
+}
+
+// Define the props with their types and default values
+const props = withDefaults(defineProps<Props>(), {
+    checked: false,
+    value: null,
 });
 
+// Define the computed property
 const proxyChecked = computed({
-    get() {
+    get(): Array<any> | boolean {
         return props.checked;
     },
-
-    set(val) {
+    set(val: Array<any> | boolean) {
         emit("update:checked", val);
     },
 });
+
 </script>
 
 <template>

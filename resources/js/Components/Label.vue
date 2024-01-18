@@ -1,5 +1,9 @@
-<script setup>
-defineProps(['value']);
+<script lang="ts" setup>
+interface Props {
+    value: string;
+}
+
+const props = defineProps<Props>();
 </script>
 
 <template>

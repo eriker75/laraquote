@@ -1,12 +1,16 @@
-<script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3';
+<script lang="ts" setup>
+import { Head, Link, usePage } from '@inertiajs/inertia-vue3';
 
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
-})
+interface Props {
+    canLogin: boolean;
+    canRegister: boolean;
+    laravelVersion: string;
+    phpVersion: string;
+}
+
+const props = defineProps<Props>()
+const page = usePage();
+const user = page.props.value.auth?.user;
 </script>
 
 <template>
@@ -14,7 +18,7 @@ defineProps({
 
     <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
         <div v-if="canLogin" class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-            <Link v-if="$page.props.auth.user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
+            <Link v-if="user" :href="route('dashboard')" class="text-sm text-gray-700 underline">
                 Dashboard
             </Link>
 

@@ -1,11 +1,12 @@
-<script setup>
-import BreezeButton from '@/Components/Button.vue';
-import BreezeCheckbox from '@/Components/Checkbox.vue';
-import BreezeGuestLayout from '@/Layouts/Guest.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
+<script lang="ts" setup>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import route from 'ziggy-js';
+import BreezeCheckbox from '@components/Checkbox.vue';
+import BreezeGuestLayout from '@layouts/Guest.vue';
+import BreezeInput from '@components/Input.vue';
+import BreezeLabel from '@components/Label.vue';
+import BreezeSubmit from '@components/Submit.vue';
+import BreezeValidationErrors from '@components/ValidationErrors.vue';
 
 defineProps({
     canResetPassword: Boolean,
@@ -53,14 +54,14 @@ const submit = () => {
                 </label>
             </div>
 
-            <div class="flex items-center justify-end mt-4">
+            <div class="flex items-center justify-end mt-4 gap-x-5">
                 <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
                     Forgot your password?
                 </Link>
 
-                <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <BreezeSubmit :form="form">
                     Log in
-                </BreezeButton>
+                </BreezeSubmit>
             </div>
         </form>
     </BreezeGuestLayout>

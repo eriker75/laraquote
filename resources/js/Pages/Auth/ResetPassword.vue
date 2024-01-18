@@ -1,19 +1,22 @@
-<script setup>
-import BreezeButton from '@/Components/Button.vue';
+<script lang="ts" setup>
+import BreezeSubmit from '@components/Submit.vue';
 import BreezeGuestLayout from '@/Layouts/Guest.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
+import BreezeInput from '@components/Input.vue';
+import BreezeLabel from '@components/Label.vue';
+import BreezeValidationErrors from '@components/ValidationErrors.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
+import route from 'ziggy-js';
 
-const props = defineProps({
-    email: String,
-    token: String,
-});
+interface Props {
+    email: string;
+    token: string;
+}
+
+const props = defineProps<Props>();
 
 const form = useForm({
-    token: props.token,
-    email: props.email,
+    token: props.token || '',
+    email: props.email || '',
     password: '',
     password_confirmation: '',
 });
@@ -48,9 +51,9 @@ const submit = () => {
             </div>
 
             <div class="flex items-center justify-end mt-4">
-                <BreezeButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                <BreezeSubmit :form="form">
                     Reset Password
-                </BreezeButton>
+                </BreezeSubmit>
             </div>
         </form>
     </BreezeGuestLayout>

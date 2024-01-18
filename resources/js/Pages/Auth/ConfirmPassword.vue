@@ -1,10 +1,12 @@
-<script setup>
-import BreezeButton from '@/Components/Button.vue';
-import BreezeGuestLayout from '@/Layouts/Guest.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
+<script lang="ts" setup>
+import BreezeButton from '@components/Button.vue';
+import BreezeGuestLayout from '@layouts/Guest.vue';
+import BreezeInput from '@components/Input.vue';
+import BreezeLabel from '@components/Label.vue';
+import BreezeSubmit from '@components/Submit.vue';
+import BreezeValidationErrors from '@components/ValidationErrors.vue';
 import { Head, useForm } from '@inertiajs/inertia-vue3';
+import route from 'ziggy-js';
 
 const form = useForm({
     password: '',
@@ -33,10 +35,10 @@ const submit = () => {
                 <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" autofocus />
             </div>
 
-            <div class="flex justify-end mt-4">
-                <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+            <div class="flex justify-end mt-4 gap-x-5">
+                <BreezeSubmit :form="form">
                     Confirm
-                </BreezeButton>
+                </BreezeSubmit>
             </div>
         </form>
     </BreezeGuestLayout>

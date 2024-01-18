@@ -1,8 +1,16 @@
-<script setup>
+<script lang="ts" setup>
 import { computed } from 'vue';
 import { usePage } from '@inertiajs/inertia-vue3';
 
-const errors = computed(() => usePage().props.value.errors);
+// Suponiendo que 'errors' es un objeto con claves de tipo string y valores de tipo string
+interface ErrorObject {
+  [key: string]: string;
+}
+
+const errors = computed(() => {
+  const page = usePage<{ errors: ErrorObject }>();
+  return page.props.value.errors;
+});
 
 const hasErrors = computed(() => Object.keys(errors.value).length > 0);
 </script>
