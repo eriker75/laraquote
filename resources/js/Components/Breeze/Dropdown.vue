@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted, onUnmounted, ref, defineProps, withDefaults } from 'vue';
+import { computed, onMounted, onUnmounted, ref, withDefaults } from 'vue';
 
 type Props = {
   align: string;

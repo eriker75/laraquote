@@ -1,12 +1,12 @@
 <script lang="ts" setup>
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import route from 'ziggy-js';
-import BreezeCheckbox from '@components/Checkbox.vue';
+import BreezeCheckbox from '@components/Breeze/Checkbox.vue';
 import BreezeGuestLayout from '@layouts/Guest.vue';
-import BreezeInput from '@components/Input.vue';
-import BreezeLabel from '@components/Label.vue';
-import BreezeSubmit from '@components/Submit.vue';
-import BreezeValidationErrors from '@components/ValidationErrors.vue';
+import BreezeInput from '@components/Breeze/Input.vue';
+import BreezeLabel from '@components/Breeze/Label.vue';
+import BreezeSubmit from '@components/Breeze/Submit.vue';
+import BreezeValidationErrors from '@components/Breeze/ValidationErrors.vue';
 
 defineProps({
     canResetPassword: Boolean,

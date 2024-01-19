@@ -25,10 +25,22 @@
         "resources/js/Layouts/*"
       ],
       "@store/*": [
-        "resources/js/store/*"
+        "resources/js/stores/*"
       ],
       "@composables/*": [
         "resources/js/Composables/*"
+      ],
+      "@utils/*": [
+        "resources/js/utils/*"
+      ],
+      "@services/*": [
+        "resources/js/services/*"
+      ],
+      "@definitions": [
+        "resources/js/definitions"
+      ],
+      "@definitions/*": [
+        "resources/js/definitions/*"
       ],
     }
   },

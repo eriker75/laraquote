@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { onMounted, ref, defineProps, defineEmits } from 'vue';
+import { onMounted, ref } from 'vue';
 
 interface Props {
   modelValue: string;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, defineProps, defineEmits, withDefaults } from 'vue';
+import { computed, withDefaults } from 'vue';
 
 interface Emits {
     (event: 'update:checked', value: Array<any> | boolean): void

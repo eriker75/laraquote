@@ -1,9 +1,9 @@
 <script lang="ts" setup>
-import BreezeSubmit from '@/Components/Submit.vue';
+import BreezeSubmit from '@components/Breeze/Submit.vue';
 import BreezeGuestLayout from '@/Layouts/Guest.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeValidationErrors from '@/Components/ValidationErrors.vue';
+import BreezeInput from '@components/Breeze/Input.vue';
+import BreezeLabel from '@components/Breeze/Label.vue';
+import BreezeValidationErrors from '@components/Breeze/ValidationErrors.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 import route from 'ziggy-js';
 

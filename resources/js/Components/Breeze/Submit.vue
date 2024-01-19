@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { InertiaForm } from '@inertiajs/inertia-vue3';
-import BreezeButton from '@/Components/Button.vue';
+import BreezeButton from './Button.vue';
 
 interface Props {
     form: InertiaForm<any>

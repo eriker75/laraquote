@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue';
-import BreezeApplicationLogo from '@components/ApplicationLogo.vue';
-import BreezeDropdown from '@components/Dropdown.vue';
-import BreezeDropdownLink from '@components/DropdownLink.vue';
-import BreezeNavLink from '@components/NavLink.vue';
-import BreezeResponsiveNavLink from '@components/ResponsiveNavLink.vue';
+import BreezeApplicationLogo from '@components/Breeze/ApplicationLogo.vue';
+import BreezeDropdown from '@components/Breeze/Dropdown.vue';
+import BreezeDropdownLink from '@components/Breeze/DropdownLink.vue';
+import BreezeNavLink from '@components/Breeze/NavLink.vue';
+import BreezeResponsiveNavLink from '@components/Breeze/ResponsiveNavLink.vue';
 import { Link } from '@inertiajs/inertia-vue3';
 
 const showingNavigationDropdown = ref(false);
@@ -20,15 +20,27 @@ const showingNavigationDropdown = ref(false);
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <Link :href="route('dashboard')">
+                                <Link :href="route('dashboard.main')">
                                     <BreezeApplicationLogo class="block h-9 w-auto" />
                                 </Link>
                             </div>
 
                             <!-- Navigation Links -->
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                                <BreezeNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                <BreezeNavLink :href="route('dashboard.main')" :active="route().current('dashboard.main')">
                                     Dashboard
+                                </BreezeNavLink>
+                            </div>
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <BreezeNavLink :href="route('dashboard.quotes')" :active="route().current('dashboard.quotes')">
+                                    Quotes
+                                </BreezeNavLink>
+                            </div>
+
+                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                                <BreezeNavLink :href="route('dashboard.favorites.index')" :active="route().current('dashboard.favorites.index')">
+                                    Favorites
                                 </BreezeNavLink>
                             </div>
                         </div>
@@ -73,7 +85,7 @@ const showingNavigationDropdown = ref(false);
                 <!-- Responsive Navigation Menu -->
                 <div :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}" class="sm:hidden">
                     <div class="pt-2 pb-3 space-y-1">
-                        <BreezeResponsiveNavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                        <BreezeResponsiveNavLink :href="route('dashboard.main')" :active="route().current('dashboard.main')">
                             Dashboard
                         </BreezeResponsiveNavLink>
                     </div>

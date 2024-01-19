@@ -1,6 +1,6 @@
 <script setup>
 import { computed } from 'vue';
-import BreezeSubmit from '@components/Submit.vue';
+import BreezeSubmit from '@components/Breeze/Submit.vue';
 import BreezeGuestLayout from '@layouts/Guest.vue';
 import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
 

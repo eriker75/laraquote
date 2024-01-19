@@ -1,5 +1,7 @@
 <script lang="ts" setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
+import BreezeAuthenticatedLayout from '@layouts/Authenticated.vue';
+import BreezeContentLayout from '@layouts/DashboardContent.vue';
+import QuoteComponent from '@components/Quote.vue';
 import { Head } from '@inertiajs/inertia-vue3';
 </script>
 
@@ -8,19 +10,41 @@ import { Head } from '@inertiajs/inertia-vue3';
 
     <BreezeAuthenticatedLayout>
         <template #header>
-            <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard
+            <h2 class="font-semibold text-xl text-gray-800 leading-tight text-center">
+                {{
+                    'admin' !== 'admin' ?
+                    "Aprove Favorite Quotes Requests" :
+                    "Manage your favorite quotes"
+                }}
             </h2>
         </template>
-
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                    <div class="p-6 bg-white border-b border-gray-200">
-                        You're logged in!
-                    </div>
+        <BreezeContentLayout>
+            <div class="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4">
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
+                </div>
+                <div class="p-4">
+                    <QuoteComponent />
                 </div>
             </div>
-        </div>
+        </BreezeContentLayout>
     </BreezeAuthenticatedLayout>
 </template>
